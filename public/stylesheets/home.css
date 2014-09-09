@@ -1,0 +1,11 @@
+﻿body {
+  font-family: 'Segoe UI';
+}
+#main-body-container div {
+  min-height: 200px;
+}
+#header {
+  height: 200px;
+  width: 100%;
+}
+/*# sourceMappingURL=home.css.map */
