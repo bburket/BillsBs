@@ -19,8 +19,12 @@
     <Content Include="bin\www.js" />
     <Content Include="package.json" />
     <Compile Include="app.js" />
+    <Compile Include="public\scripts\homeController.js" />
+    <Compile Include="public\scripts\module.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
+    <Content Include="public\stylesheets\bootstrap.min.css" />
+    <Content Include="public\templates\index.html" />
     <Content Include="views\error.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
@@ -29,6 +33,8 @@
   <ItemGroup>
     <Folder Include="bin" />
     <Folder Include="public" />
+    <Folder Include="public\scripts\" />
+    <Folder Include="public\templates\" />
     <Folder Include="public\stylesheets" />
     <Folder Include="routes" />
     <Folder Include="views" />
