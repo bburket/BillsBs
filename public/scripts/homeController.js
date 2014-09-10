@@ -1,15 +1,8 @@
-﻿sweetSuite.controller('homeController', ['$scope', function ($scope) {
-    
-    $scope.plugins = [
-        { name: "Home", templateUrl: "" },
-        { name: "GuidGen", templateUrl: "/templates/guidgen.html" },
-        { name: "Pretty Json", templateUrl: "" }
-    ];
-
-
-    $scope.selectedPlugin = $scope.plugins[0];
-
-    $scope.pluginNavClick = function(plugin) {
-        $scope.selectedPlugin = plugin;
+﻿/*sweetSuite.controller('homeController', ["$routeParams", "siteConfig", function ($routeParams, siteConfig) {
+    this.selectedPlugin = siteConfig.plugins[0];
+    this.plugins = siteConfig.plugins;
+    if ($routeParams.toolName && siteConfig.plugins[$routeParams.toolName]) {
+        this.selectedPlugin = $routeParams.toolName;
     }
 }]);
+ * */

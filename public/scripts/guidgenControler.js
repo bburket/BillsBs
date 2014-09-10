@@ -1,7 +1,10 @@
-﻿sweetSuite.controller('guidgenController', ['$scope', function ($scope) {
-    $scope.generatedGuid = uuid.v4();
+﻿/*
+sweetSuite.controller('guidgenController', function () {
+    this.generatedGuid = uuid.v4();
 
-    $scope.generateGuid = function() {
+    this.generateGuid = function() {
         this.generatedGuid = uuid.v4();
     }
-}]);
+});
+ * 
+ * */

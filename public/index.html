@@ -10,23 +10,24 @@
 </head>
 <body ng-app="sweetSuite">
 
-    <div ng-controller="homeController" class="container-fluid">
+    <div ng-controller="homeController as home" class="container-fluid">
         <div id="header-row" class="row">
             <div class="col-md-12" id="header"><h1>TODO: Hero banner</h1></div>
         </div>
         <div class="row" id="main-body-container">
             <div class="col-md-2 col-sm-3" id="left-rail">
                 <div id="left-nav-list" class="list-group">
-                    <a ng-repeat="plugin in plugins" href="#" class="list-group-item {{ (plugin.name == $parent.selectedPlugin.name) ? 'active' : '' }}" ng-click="pluginNavClick(plugin)">{{ plugin.name }}</a>
+                    <a ng-repeat="plugin in home.plugins" href="{{ plugin.navUrl }}" class="list-group-item {{ (plugin.name == $parent.selectedPlugin.name) ? 'active' : '' }}" ng-click="pluginNavClick(plugin)">{{ plugin.name }}</a>
                 </div>
             </div>
             <div class="col-md-10 col-sm-9" id="main-body">
-                <div id="plugin-container" ng-include="selectedPlugin.templateUrl"></div>
+                <div id="plugin-container" ng-view></div>
             </div>
         </div>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular.min.js"></script>
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular-route.min.js"></script>
 
     <script src="/scripts/bootstrap.min.js"></script>
     <script src="/scripts/module.js"></script>
