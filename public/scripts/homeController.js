@@ -2,7 +2,7 @@
     
     $scope.plugins = [
         { name: "Home", templateUrl: "" },
-        { name: "GuidGen", templateUrl: "" },
+        { name: "GuidGen", templateUrl: "/templates/guidgen.html" },
         { name: "Pretty Json", templateUrl: "" }
     ];
 
