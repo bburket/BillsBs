@@ -1,19 +1,41 @@
-﻿var sweetSuite = angular.module('sweetSuite', ['ngRoute']);
+﻿var sweetSuite = {};
+sweetSuite.module = angular.module('sweetSuite', ['ngRoute']);
 
-(function() {
-sweetSuite.config(['$routeProvider', '$route', function ($routeProvider, $route) {
+(function () {
     var siteConfig = {};
     siteConfig.plugins = {};
-    siteConfig.plugins = {"home" : { name: "Home", templateUrl: "", navUrl: "" },
-                         "guidgen": { name: "GuidGen", templateUrl: "/templates/guidgen.html", navUrl: "/tools/guidgen", controller: "guidgenController" },
-                         "prettyJson": { name: "Pretty Json", templateUrl: "", navUrl: ""}}
-        
-    sweetSuite.value("siteConfig", siteConfig);
+    siteConfig.plugins = {
+        "home" : { key: "home", displayName: "Home", templateUrl: "/templates/home.html", navUrl: "/", orderId: 0},
+        "guidgen": { key: "guidgen", displayName: "GuidGen", templateUrl: "/templates/guidgen.html", navUrl: "tools/guidgen", orderId: 1},
+        "prettyJson": { key:"prettyJson", displayName: "Pretty Json", templateUrl: "", navUrl: "", orderId: 2}
+    }
+    
+    sweetSuite.module.value("siteConfig", siteConfig);
+    sweetSuite.uninjectedSiteConfig = siteConfig;
+})();
 
-    $routeProvider.when('/tools/:toolName', {
-        templateUrl: 'templates/' + $route.current.toolName + '.html',
-        controller: plugins[$route.current.toolName],
-        controllerAs: "toolController"
+(function() {
+    sweetSuite.module.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+        $routeProvider.when('/tools/:toolName', {
+            templateUrl: function (rp) {
+                return 'templates/' + rp.toolName + '.html';
+            },
+        }).when('/', {
+            templateUrl: sweetSuite.uninjectedSiteConfig.plugins.home.templateUrl
+        });
+        
+        $locationProvider.html5Mode(true);
+    }]);
+})();
+
+(function() {
+    sweetSuite.module.filter('object2Array', function() {
+        return function(input, value) {
+            var out = [];
+            for (i in input) {
+                out.push(input[i]);
+            }
+            return out;
+        }
     });
-}]);
 })();
