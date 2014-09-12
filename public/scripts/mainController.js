@@ -1,23 +1,17 @@
 ﻿sweetSuite.module.controller('mainController', ["$route", "$scope", "siteConfig", function ($route, $scope, siteConfig) {
-        /*
-        var internalSelectedPlugin;
-        
-        function setSelectedPlugin() {
-            var pluginName = $route.current && $route.current.params.toolName ? $route.current.params.toolName : "home";
-            internalSelectedPlugin = siteConfig.plugins[pluginName];
-        }
-        
-        $scope.$on('$viewContentLoaded', function () {
-            setSelectedPlugin();
-        });
-        
+    
+    var self = this;
+    
+    function setSelectedPlugin() {
+        var pluginName = $route.current && $route.current.params.toolName ? $route.current.params.toolName : "home";
+        self.selectedPlugin = siteConfig.plugins[pluginName];
+    }
+    
+    $scope.$on('$viewContentLoaded', function () {
         setSelectedPlugin();
-        
-        this.selectedPlugin = internalSelectedPlugin;
-        this.plugins = siteConfig.plugins;
-        */
-        return {
-            plugins: siteConfig.plugins
-        }
+    });
+    
+    setSelectedPlugin();
+    
+    this.plugins = siteConfig.plugins;
 }]);
- 

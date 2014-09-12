@@ -5,9 +5,9 @@ sweetSuite.module = angular.module('sweetSuite', ['ngRoute']);
     var siteConfig = {};
     siteConfig.plugins = {};
     siteConfig.plugins = {
-        "home" : { key: "home", displayName: "Home", templateUrl: "/templates/home.html", navUrl: "/", orderId: 0},
+        "home" : { key: "home", displayName: "Home", templateUrl: "/templates/home.html", navUrl: "", orderId: 0},
         "guidgen": { key: "guidgen", displayName: "GuidGen", templateUrl: "/templates/guidgen.html", navUrl: "tools/guidgen", orderId: 1},
-        "prettyJson": { key:"prettyJson", displayName: "Pretty Json", templateUrl: "", navUrl: "", orderId: 2}
+        "jsonPrettyPrint": { key:"jsonPrettyPrint", displayName: "Pretty Json", templateUrl: "/templates/jsonPrettyPrint.html", navUrl: "tools/jsonPrettyPrint", orderId: 2}
     }
     
     sweetSuite.module.value("siteConfig", siteConfig);

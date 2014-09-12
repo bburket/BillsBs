@@ -18,7 +18,7 @@
         <div class="row" id="main-body-container">
             <div class="col-md-2 col-sm-3" id="left-rail">
                 <div id="left-nav-list" class="list-group">
-                    <a ng-repeat="plugin in main.plugins | object2Array | orderBy: 'orderId'" ng-href="/{{plugin.navUrl}}" class="list-group-item {{ (plugin.key == main.selectedPlugin.key) ? 'active' : '' }}" ng-click="pluginNavClick(plugin)">{{ plugin.displayName }} - {{main.selectedPlugin.key}}</a>
+                    <a ng-repeat="plugin in main.plugins | object2Array | orderBy: 'orderId'" ng-href="/{{plugin.navUrl}}" class="list-group-item {{ (plugin.key == main.selectedPlugin.key) ? 'active' : '' }}" ng-click="pluginNavClick(plugin)">{{ plugin.displayName }}</a>
                 </div>
             </div>
             <div class="col-md-10 col-sm-9" id="main-body">
@@ -36,6 +36,7 @@
     <script src="/scripts/homeController.js"></script>
     <script src="/scripts/guidgenController.js"></script>
     <script src="/scripts/uuid.min.js"></script>
+    <script src="/scripts/jsonPrettyPrintController.js"></script>
 </body>
 </html>
 
