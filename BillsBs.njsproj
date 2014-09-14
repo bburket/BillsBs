@@ -23,11 +23,13 @@
     <Compile Include="public\scripts\bootstrap.min.js" />
     <Compile Include="public\scripts\guidgenController.js" />
     <Compile Include="public\scripts\homeController.js" />
+    <Compile Include="public\scripts\ipsumController.js" />
     <Compile Include="public\scripts\jsonPrettyPrintController.js" />
     <Compile Include="public\scripts\mainController.js" />
     <Compile Include="public\scripts\module.js" />
     <Compile Include="public\scripts\uuid.js" />
     <Compile Include="public\scripts\uuid.min.js" />
+    <Compile Include="routes\api.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Content Include="public\fonts\glyphicons-halflings-regular.eot" />
@@ -48,6 +50,7 @@
     <Content Include="public\stylesheets\home.min.css" />
     <Content Include="public\templates\guidgen.html" />
     <Content Include="public\templates\home.html" />
+    <Content Include="public\templates\ipsum.html" />
     <Content Include="public\templates\jsonPrettyPrint.html" />
     <Content Include="views\error.jade" />
     <Content Include="views\index.jade" />
